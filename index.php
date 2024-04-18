@@ -60,20 +60,7 @@ include_once("config-medicare.php");
                     </button>
                 </div>
             </div>
-            <div id="display2" class="md:mt-8 mt-4 hidden">
-                <h3 class="font-bold text-center md:text-4xl text-3xl my-8">
-                    Are You Enrolled in Medicaid Part A Or Part B?
-                </h3>
-                <div class="grid grid-cols-1 gap-6">
-                    <button id="btn-yes" class="flex justify-center bg-[#41961d] hover:bg-green-600  tracking-wide text-white font-bold rounded-2xl md:w-3/4 w-1/2 mx-auto border-b-4 border-green-800 uppercase shadow-md md:py-6 py-4 md:text-2xl px-6 items-center cta_btn btn_2">
 
-                        Yes
-                    </button>
-                    <button id="btn-no" class="flex justify-center bg-[#41961d] hover:bg-green-600 tracking-wide text-white font-bold rounded-2xl md:w-3/4 w-1/2 mx-auto border-b-4 border-green-800 uppercase shadow-md md:py-6 py-4 md:text-2xl px-6 items-center cta_btn btn_2">
-                        No
-                    </button>
-                </div>
-            </div>
             <div id="display3" class="md:mt-8 mt-4 hidden">
                 <h3 class="font-bold text-center md:text-4xl text-3xl my-8">
                     Are you also interested in Zero Cost ($0) Vision Coverage?
@@ -92,6 +79,20 @@ include_once("config-medicare.php");
 
         </div>
     </div>
+    <div id="display2" class="md:mt-8 mt-4 hidden">
+                <h3 class="font-bold text-center md:text-4xl text-3xl my-8">
+                    Are You Enrolled in Medicare Part A Or Part B?
+                </h3>
+                <div class="grid grid-cols-1 gap-6">
+                    <button id="btn-yes" class="flex justify-center bg-[#41961d] hover:bg-green-600  tracking-wide text-white font-bold rounded-2xl md:w-3/4 w-1/2 mx-auto border-b-4 border-green-800 uppercase shadow-md md:py-6 py-4 md:text-2xl px-6 items-center cta_btn btn_2">
+
+                        Yes
+                    </button>
+                    <button id="btn-no" class="flex justify-center bg-[#41961d] hover:bg-green-600 tracking-wide text-white font-bold rounded-2xl md:w-3/4 w-1/2 mx-auto border-b-4 border-green-800 uppercase shadow-md md:py-6 py-4 md:text-2xl px-6 items-center cta_btn btn_2">
+                        No
+                    </button>
+                </div>
+            </div>
     <div id="display4" class="hidden hidden mx-auto md:pt-4 pt-1 px-4 md:px-0 max-w-2xl container ">
         <div class="p-6 mt-4  text-center ">
             <h3 class="text-xl md:text-2xl  font-bold text-[#41961d] mb-4">
@@ -211,6 +212,8 @@ include_once("config-medicare.php");
 
         btn2.addEventListener("click", () => {
             display1.style.display = "none";
+            display_head.style.display="none";
+            mainContainer.style.display = "none";
             display2.style.display = "block";
             const newUrl = new URL(window.location.href);
             newUrl.searchParams.set('age', '64');
